@@ -113,7 +113,7 @@ namespace UnitTestProject1
             CommandLine commandLine = new CommandLine(db, commandProvier);
             commandLine.Run();
 
-            Assert.AreEqual("Not enough arguments for command put.", commandProvier.DequeueMessage());
+            Assert.AreEqual("ERROR - Not enough arguments for command put.", commandProvier.DequeueMessage());
             Assert.AreEqual("bye", commandProvier.DequeueMessage());
         }
 
@@ -125,7 +125,7 @@ namespace UnitTestProject1
             CommandLine commandLine = new CommandLine(db, commandProvier);
             commandLine.Run();
 
-            Assert.AreEqual("Unknown command.", commandProvier.DequeueMessage());
+            Assert.AreEqual("ERROR - Unknown command.", commandProvier.DequeueMessage());
             Assert.AreEqual("bye", commandProvier.DequeueMessage());
         }
 
